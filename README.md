@@ -80,7 +80,7 @@ Some steps bellow does not apply to **Linux** or **Windows** users:
 ❌ Linux: 3, 5, 6 steps
 ❌ Linux and Windows: 6 step
 
-1. clone the repository: `git clone git@github.com:lucasmedeirosleite/forum-app.git`
+1. clone the repository: `git clone --recursive git@github.com:lucasmedeirosleite/forum-app.git`
 2. `cd forum-app`
 3. check your virtual machine ip with `docker-machine ip`
 4. replace REACT_APP_API_HOST value at `forum-webapp/.env` with this `http://${MACHINE_IP}:3000` or `localhost://3000` for Linux users
