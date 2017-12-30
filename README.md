@@ -23,7 +23,7 @@ The backend stack is:
 
 The Rails application was tested using `RSpec`;
 
-**PS:** The backend API can be accessed [here](forum-api/README.md)
+**PS:** The backend API can be accessed [here](https://github.com/lucasmedeirosleite/forum-api/blob/master/README.md)
 
 ### Frontend
 
