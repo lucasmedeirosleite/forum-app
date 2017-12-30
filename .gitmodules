@@ -1,0 +1,6 @@
+[submodule "forum-api"]
+	path = forum-api
+	url = git@github.com:lucasmedeirosleite/forum-api.git
+[submodule "forum-webapp"]
+	path = forum-webapp
+	url = git@github.com:lucasmedeirosleite/forum-webapp.git
