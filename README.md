@@ -84,12 +84,12 @@ Some steps bellow does not apply to **Linux** or **Windows** users:
 1. clone the repository: `git clone --recursive git@github.com:lucasmedeirosleite/forum-app.git`
 2. `cd forum-app`
 3. check your virtual machine ip with `docker-machine ip`
-4. replace REACT_APP_API_HOST value at `forum-webapp/.env` with this `http://${MACHINE_IP}:3000` or `localhost://3000` for Linux users
+4. replace REACT_APP_API_HOST value at `forum-webapp/.env` with this `http://${MACHINE IP FROM STEP 3}:3000` or `localhost://3000` for Linux users
 5. `docker-machine start`
 6. activate NFS: `docker-machine-nfs default`
 7. Run `docker-compose up` ⚠️
 8. drink a ☕️ or 🍺, according to your preference
-9. The forum app will be available at `http://${MACHINE_IP}:4000` or at `localhost://4000` for Linux users
+9. The forum app will be available at `http://${MACHINE IP FROM STEP 3}:4000` or at `localhost://4000` for Linux users
 
 ##### Suggestions
 
