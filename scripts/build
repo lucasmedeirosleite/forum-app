@@ -1,0 +1,24 @@
+#!/bin/sh
+
+cd forum-webapp
+
+yarn install
+
+yarn start
+
+cd ..
+
+cd forum-api
+
+echo "Bundling gems"
+bundle check || bundle install
+
+echo "Removing old pid"
+rm /forum-api/tmp/pids/server.pid
+
+# setup database and start puma
+bundle exec rake db:create
+bundle exec rake db:migrate
+bundle exec rake db:seed
+
+cd ..

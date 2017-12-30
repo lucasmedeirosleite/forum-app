@@ -1,0 +1,62 @@
+version: '2'
+services:
+  elasticsearch:
+    image: elasticsearch
+    environment:
+      - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - elasticsearch:/usr/share/elasticsearch/data
+
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  gems:
+    image: busybox
+    volumes:
+      - /gems
+
+  source_code:
+    image: busybox
+    volumes:
+      - .:/forum/forum-api
+
+  api:
+    tty: true
+    stdin_open: true
+    build: forum-api/
+    command: bin/docker-start
+    container_name: api
+    env_file: forum-api/.env
+    links:
+      - db
+      - elasticsearch
+    volumes_from:
+      - gems
+      - source_code
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - elasticsearch
+
+  web:
+    build: forum-webapp/
+    command: scripts/start.sh
+    container_name: web
+    env_file: forum-webapp/.env
+    volumes:
+      - .:/forum/forum-webapp
+    ports:
+      - "4000:4000"
+      - "35729:35729"
+
+volumes:
+  elasticsearch: {}
+  postgres: {}
