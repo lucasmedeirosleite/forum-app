@@ -78,6 +78,7 @@ If you're a **Windows** user, follow the steps bellow:
 Some steps bellow does not apply to **Linux** or **Windows** users:
 
 ❌ Linux: 3, 5, 6 steps
+
 ❌ Linux and Windows: 6 step
 
 1. clone the repository: `git clone --recursive git@github.com:lucasmedeirosleite/forum-app.git`
